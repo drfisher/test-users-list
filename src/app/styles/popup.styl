@@ -1,0 +1,68 @@
+.overlay
+	background-color rgba(0, 0, 0, .25)
+	display none
+	left 0
+	position fixed
+	height 100%
+	top 0
+	width 100%
+
+	&_visible
+		display block
+
+	&__box
+		background-color #fff
+		border-radius 4px
+		box-shadow 0 10px 16px rgba(0, 0, 0, .2)
+		left 50%
+		padding 20px 15px
+		position absolute
+		top 40%
+		transform translate(-50%, -50%)
+
+	&__close
+		background-color #fff
+		border-radius 50%
+		box-shadow 0 4px 4px rgba(0, 0, 0, .1)
+		cursor pointer
+		display block
+		height 30px
+		position absolute
+		right 0
+		top 0
+		transform translate(50%, -50%)
+		width 30px
+
+		&::before,
+		&::after
+			background-color #333
+			content ''
+			height 2px
+			position absolute
+			transform rotate(45deg) translate(11px, -1px)
+			transform-origin 0 0
+			width 20px
+
+		&::after
+			transform rotate(-45deg) translate(-4px, 6px)
+			transform-origin 100% 0
+
+	& .edit-user
+		text-align center
+
+		&__photo
+			border-radius 4px
+			margin-bottom 20px
+			width 160px
+
+	& .form-field__input
+		width 160px
+
+	& .preloader
+		display none
+
+	&_loading &__box__content
+		display none
+
+	&_loading .preloader
+		display block

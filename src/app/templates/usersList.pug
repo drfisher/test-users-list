@@ -1,0 +1,24 @@
+div.users
+  ul.users-list
+    each user in result
+      li(class="user js-users-list-user" data-id=user.id)
+        div.user__content
+          img(
+            alt=user.name
+            class="user__photo"
+            src=user.avatarUrl
+          )
+          span.user__name= user.name
+
+  if (previousPageUrl || nextPageUrl)
+    div.paging
+      if previousPageUrl
+        button(
+          class="form-button paging__button_prev js-users-list-next"
+          data-url=previousPageUrl
+        ) previous
+      if nextPageUrl
+        button(
+          class="form-button paging__button_next js-users-list-next"
+          data-url=nextPageUrl
+        ) next

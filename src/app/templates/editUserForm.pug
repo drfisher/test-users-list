@@ -1,0 +1,24 @@
+form.edit-user(action=action method=(method || 'POST'))
+  img(
+    class="edit-user__photo"
+    src=user.avatarUrl
+    alt=user.name
+  )
+  input(
+    name="avatarUrl"
+    type="hidden"
+    value=user.avatarUrl
+  )
+  div.form-field
+    label.form-field__label
+      div.form-field__label__text Name*
+      input(
+        name="name"
+        type="text"
+        class="form-field__input"
+        value=user.name
+        required="required"
+        placeholder="John Doe"
+      )
+
+  button.form-button save
